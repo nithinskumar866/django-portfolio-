@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="home">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    {% load static %}
+    <div class="background-container">
+        <!-- Background image container -->
+        <div class="background-image"></div>
+        
+        <div class="content-container">
+            <div class="welcome-message">
+                <h1>WELCOME TO MY PORTFOLIO</h1>
+            </div>
+            
+            <div class="text-animation">
+                <h3>This is a token of my talent exposure</h3>
+            </div>
+            
+            <a href="{% static 'documents/your_resume.pdf' %}" download="YourResume.pdf" class="download-icon">
+                <i class="fas fa-download"></i> Download Resume
+            </a>
+
+            <ul class="social-icons">
+                <li class="item">
+                    <a href="https://github.com/nithinskumar866" target="_blank">
+                        <i class="fab fa-instagram icon"></i>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="https://www.linkedin.com/in/nithin-s-52292b278/" target="_blank">
+                        <i class="fab fa-linkedin icon"></i>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="https://github.com/nithinskumar866" target="_blank">
+                        <i class="fab fa-github icon"></i>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="https://www.hackerrank.com/profile/nithinsofficial1e" target="_blank">
+                        <i class="fab fa-hackerrank icon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

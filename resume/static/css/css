@@ -1,0 +1,156 @@
+/* Reset and general styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    height: 100vh;
+    background-color: rgb(61, 61, 206); /* Navy blue background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Default text color */
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px; /* Adjusted padding */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: hsl(249, 20%, 11%);
+}
+
+/* Keyframes for text animation */
+@keyframes moveText {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Home section styles */
+#home {
+    position: relative; /* Ensure relative positioning for child elements */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    padding: 2rem;
+    background-image: url("{% static 'images/your_image.jpg' %}"); /* Background image path */
+    background-size: cover;
+    background-position: center;
+}
+
+.welcome-message {
+    margin-bottom: 2rem; /* Space below heading and paragraph */
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem; /* Space between heading and paragraph */
+    animation: moveText 1s ease infinite alternate; /* Text animation */
+}
+
+p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Social icons styling */
+ul.social-icons {
+    margin-top: 2rem; /* Space above social icons */
+    display: flex;
+    list-style: none;
+    gap: 2.5rem; /* Gap between icons */
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Remove default padding */
+}
+
+.item {
+    width: 4.8rem; /* Icon container width */
+    height: 4.8rem; /* Icon container height */
+    border-radius: 50%; /* Round shape */
+    overflow: hidden; /* Hide overflowing content */
+    position: relative; /* Positioning context for hover effect */
+    transition: border-color 0.3s ease-in-out; /* Smooth border transition */
+}
+
+.item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    border: 3px solid #f0f9fe; /* Border color */
+    background-color: #f0f9fe; /* Background color */
+    position: relative; /* Ensure positioning context for pseudo-element */
+}
+
+.item a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color); /* Background color */
+    z-index: 0; /* Behind other elements */
+    transform-origin: bottom; /* Origin point for transform */
+    transform: scale(1, 0); /* Initial scale */
+    transition: transform 0.5s ease; /* Smooth transform transition */
+}
+
+.item:hover a::before {
+    transform: scale(1, 1); /* Scale on hover */
+}
+
+.icon {
+    font-size: 2rem; /* Icon size */
+    color: hsl(203, 92%, 8%); /* Icon color */
+    transition: color 0.5s ease, transform 0.5s ease; /* Smooth color and transform transition */
+    z-index: 2; /* Above pseudo-element */
+}
+
+.hackerrank-icon {
+    width: 25%; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 25%; /* Maximum width */
+}
+
+.item a:hover .icon {
+    color: #fff; /* Icon color on hover */
+    transform: rotateY(360deg); /* Rotation on hover */
+}
+
+/* Define background colors for each social icon */
+.item:nth-child(1) {
+    --bg-color: linear-gradient(to bottom right, #f9ce34, #ee2a7b, #6228d7); /* Gradient background */
+}
+
+.item:nth-child(2) {
+    --bg-color: #0077b5; /* LinkedIn blue */
+}
+
+.item:nth-child(3) {
+    --bg-color: #070707; /* GitHub black */
+}
+
+.item:nth-child(4) {
+    --bg-color: #00ea64; /* Hackerrank green */
+}

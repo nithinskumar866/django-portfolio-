@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="certificates">
+    <h2>Certificates</h2>
+    <ul class="cards">
+        {% for certificate in certificates %}
+        <li>
+            <a href="#" class="card">
+                <img src="{{ certificate.image.url }}" class="card__image" alt="{{ certificate.title }}" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 40 80 c 22 0 40 -22 40 -40 v 40 Z"/>
+                        </svg>
+                        <img class="card__thumb" src="{{ certificate.image.url }}" alt="{{ certificate.title }}" />
+                        <div class="card__header-text">
+                            <h3 class="card__title">{{ certificate.title }}</h3>
+                            <span class="card__status">Issued: {{ certificate.issue_date }}</span>
+                        </div>
+                    </div>
+                    <p class="card__description">{{ certificate.description }}</p>
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

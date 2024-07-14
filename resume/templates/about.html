@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="about">
+    {% load static %}
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    </head>
+    <div class="about-container">
+        <div class="about-image">
+            <img src="{{ about.image.url }}" alt="About Me">
+            <!-- Text below the image -->
+            <p class="image-text">Your text below the image</p>
+        </div>
+        <div class="about-details">
+            <h2>About Me</h2>
+            <p>{{ about.description }}</p>
+            <!-- Additional details below the main description -->
+            <div class="additional-details">
+                <p>Additional detail 1</p>
+                <p>Additional detail 2</p>
+                <!-- Add more details as needed -->
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

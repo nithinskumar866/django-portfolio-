@@ -1,0 +1,16 @@
+<!-- feedback.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="feedback">
+    <h2>Feedback</h2>
+    <!-- Remove displaying feedbacks in the list -->
+    <h3>Submit Feedback</h3>
+    <form method="post" action="{% url 'submit_feedback' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</section>
+{% endblock %}
